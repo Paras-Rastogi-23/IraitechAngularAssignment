@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "shiksharthi-front-end"
+    }
+  },
+  "defaultProject": "shiksharthi-front-end",
+  "cli": {
+    "analytics": false
+  }
 }
