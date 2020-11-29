@@ -1,24 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MaterialModule } from './material/material/material.module';
 
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {QuestionsComponent} from './Questions/Questions.component'
+import { Question1Component } from './Question1/Question1.component';
+import { Question2Component } from './Question2/Question2.component';
+import { Question3Component } from './Question3/Question3.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    DashboardComponent
+    QuestionsComponent,
+    Question1Component,
+    Question2Component,
+    Question3Component
   ],
   imports: [
+    FormsModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
