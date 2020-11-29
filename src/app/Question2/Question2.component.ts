@@ -1,36 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
-
+import { Phone } from './phoneNumber';
 @Component({
   selector: 'app-question2',
   templateUrl: './question2.component.html',
-  styleUrls: ['./question2.component.css']
+  styleUrls: ['./question2.component.css'],
 })
 export class Question2Component implements OnInit {
-  numberForm : FormGroup
-  constructor(private formBuilder : FormBuilder) { }
+  phoneNumber = new Phone();
+  numberArray = [];
+
+  numberForm: FormGroup;
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.numberForm = this.formBuilder.group({
-      phoneNumber : this.formBuilder.array([this.addPhoneform()])
-    })
+    this.numberArray.push(this.phoneNumber);
   }
 
-  addPhoneform() {
-    return this.formBuilder.group({
-      number: ['']
-    })
-  }
-  createForm(){
-
-  }
-
-  onSubmit(){
-    console.log(this.numberForm.value);
+  showNumber;
+  onSubmit() {
+    let temp = [];
+    temp = this.numberArray;
+    this.showNumber = temp;
+    console.log(this.showNumber);
   }
 
   addMoreNumber() {
-    (<FormArray>this.numberForm.get('number')).push(this.addPhoneform());
+    this.phoneNumber = new Phone();
+    this.numberArray.push(this.phoneNumber);
   }
-
 }
