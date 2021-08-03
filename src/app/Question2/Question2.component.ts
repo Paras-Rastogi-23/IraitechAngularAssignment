@@ -9,19 +9,16 @@ import { Phone } from './phoneNumber';
 export class Question2Component implements OnInit {
   phoneNumber = new Phone();
   numberArray = [];
-
-  numberForm: FormGroup;
-  constructor(private formBuilder: FormBuilder) {}
+ 
+  constructor() {}
 
   ngOnInit(): void {
     this.numberArray.push(this.phoneNumber);
   }
 
-  showNumber;
+  showNumber =[];
   onSubmit() {
-    let temp = [];
-    temp = this.numberArray;
-    this.showNumber = temp;
+    this.showNumber = this.numberArray;
     console.log(this.showNumber);
   }
 

@@ -30,14 +30,12 @@
         <div class="container">
           <form class="form">
             <div class="form-group" *ngFor="let obj of numberArray">
-              <!-- <div > -->
               <input
                 type="number"
                 class="form-control"
                 [(ngModel)]="obj.number"
                 [ngModelOptions]="{standalone: true}"
               />
-              <!-- </div> -->
             </div>
             <button
               style="float: right"
@@ -50,8 +48,7 @@
           </form>
   
           <div *ngFor="let number of numberArray">
-   
-              Phone Number: {{number.number}}
+            Phone Number: {{number.number}}
           </div>
         </div>
       </div>
